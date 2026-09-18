@@ -1,0 +1,24 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/blog-images"
+public_folder: "/assets/blog-images"
+
+site_url: "https://faridlaw.net"
+display_url: "https://faridlaw.net"
+
+collections:
+  - name: "blog"
+    label: "Publications"
+    label_singular: "Publication"
+    folder: "content/publications"
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Summary", name: "summary", widget: "text", required: false, hint: "Shown on the blog listing page under the title." }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: Publications
+description: Insights and updates from Farid & Farid Law Firm.
+permalink: /publications/index.html
+---
+<div class="eyebrow">Insights</div>
+<h1 style="margin-bottom:50px;">Publications.</h1>
+
+<div style="display:flex; flex-direction:column; gap:36px;">
+{% for post in collections.posts %}
+  <a href="{{ post.url }}" style="display:block; padding-bottom:32px; border-bottom:1px solid var(--line);">
+    <div style="font-size:13px; color:var(--ink-soft); margin-bottom:8px;">{{ post.data.date | readableDate }}</div>
+    <div style="font-family:var(--serif); font-size:24px; font-weight:500; margin-bottom:8px;">{{ post.data.title }}</div>
+    {% if post.data.summary %}<div style="color:var(--ink-soft); font-size:15px;">{{ post.data.summary }}</div>{% endif %}
+  </a>
+{% else %}
+  <p style="color:var(--ink-soft);">No posts yet — check back soon.</p>
+{% endfor %}
+</div>

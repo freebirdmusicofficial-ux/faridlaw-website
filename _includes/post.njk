@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+<div class="eyebrow">{{ date | readableDate }}</div>
+<h1 style="margin-bottom:36px;">{{ title }}</h1>
+{% if image %}<img src="{{ image }}" alt="" style="width:100%; border-radius:2px; margin-bottom:36px;">{% endif %}
+<style>
+  /* Spacing for markdown content coming out of the CMS editor —
+     without this, paragraphs run together with no visible break. */
+  .post-body p{ margin-bottom: 1.4em; }
+  .post-body p:last-child{ margin-bottom: 0; }
+  .post-body h2{ font-family: var(--serif); font-size: 26px; font-weight: 500; color: var(--ink); margin: 1.6em 0 0.7em; }
+  .post-body h3{ font-family: var(--serif); font-size: 21px; font-weight: 500; color: var(--ink); margin: 1.4em 0 0.6em; }
+  .post-body ul, .post-body ol{ margin: 0 0 1.4em; padding-left: 1.4em; }
+  .post-body li{ margin-bottom: 0.5em; }
+  .post-body blockquote{ margin: 0 0 1.4em; padding-left: 20px; border-left: 3px solid var(--gold); color: var(--ink-soft); font-style: italic; }
+  .post-body a{ color: var(--gold-deep); text-decoration: underline; }
+  .post-body img{ width: 100%; border-radius: 2px; margin: 0.5em 0 1.4em; }
+</style>
+<div class="post-body" style="font-size:16.5px; line-height:1.8; color:var(--ink-soft);">
+{{ content | safe }}
+</div>
+<p style="margin-top:48px;"><a href="/publications/" style="color:var(--gold-deep); font-weight:600; font-size:14px;">&larr; Back to all publications</a></p>

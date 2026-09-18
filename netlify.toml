@@ -1,0 +1,21 @@
+[build]
+  command = "npm install && npx @11ty/eleventy"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/blog"
+  to = "/publications/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/publications/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/publications"
+  to = "/publications/"
+  status = 301
